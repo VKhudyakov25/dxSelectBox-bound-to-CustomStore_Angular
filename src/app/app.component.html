@@ -1,5 +1,20 @@
-<dx-button text="Click Me" (onClick)="toggle()" type="success"></dx-button>
-<dx-text-box #textbox label="Link" labelMode="floating"></dx-text-box>
-<ng-container *ngIf="show">
-  <div id="card-text" class="card-text">Text Button value: "{{ content }}"</div>
-</ng-container>
+<div class="dx-fieldset-header">SearchBox</div>
+<div class="dx-field">
+  <div class="dx-field-label">Product</div>
+  <div class="dx-field-value">
+    <dx-select-box
+      #selectBox
+      [dataSource]="productsDataSource"
+      displayExpr="Name"
+      valueExpr="id"
+      [searchEnabled]="true"
+      [searchMode]="searchModeOption"
+      [searchExpr]="searchExprOption"
+      [searchTimeout]="searchTimeoutOption"
+      [acceptCustomValue]="true"
+      (onCustomItemCreating)="addCustomItem($event)"
+    >
+      ></dx-select-box
+    >
+  </div>
+</div>
